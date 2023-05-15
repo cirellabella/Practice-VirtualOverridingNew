@@ -22,14 +22,31 @@ namespace Practice_VirtualOverridingNew
         //Method override Withdraw
         public override bool Withdraw(double amount)
         {
-            bool withdrewAmount = base.Withdraw(amount);
-
-            if (!withdrewAmount)
+            if (amount > 0 && amount <= Balance)
+            {
+                Balance -= amount;
+                return true;
+            }
+            else
             {
                 Balance -= _overdraftFee;
+                return false;
             }
+        }
 
-            return withdrewAmount;
+        public override bool Deposit(double amount)
+        {
+            {
+                if (amount > 0)
+                {
+                    Balance += amount;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
 
         public override string ToString()

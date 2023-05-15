@@ -19,5 +19,20 @@ namespace Practice_VirtualOverridingNew
             return false;
         }
 
+        public override bool Deposit(double amount)
+        {
+            {
+                if (amount > 0)
+                {
+                    Balance += amount;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
     }
 }

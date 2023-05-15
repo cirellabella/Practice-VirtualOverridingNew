@@ -20,7 +20,7 @@ namespace Practice_VirtualOverridingNew
 
         public override bool Deposit(double amount)
         {
-            if(amount > 0)
+            if (amount > 0)
             {
                 Balance += amount;
                 Balance += (amount * _interest);
@@ -29,6 +29,21 @@ namespace Practice_VirtualOverridingNew
             else
             {
                 return false;
+            }
+        }
+
+        public override bool Withdraw(double amount)
+        {
+            {
+                if (amount > 0)
+                {
+                    Balance += amount;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
