@@ -32,6 +32,21 @@ namespace Practice_VirtualOverridingNew
             }
         }
 
+        public override bool Withdraw(double amount)
+        {
+            {
+                if (amount > 0)
+                {
+                    Balance += amount;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         public override string ToString()
         {
             return base.ToString() + $" Interest Amount is: {Interest}";
